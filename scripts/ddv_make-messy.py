@@ -4,6 +4,15 @@ import os
 datapath = os.path.join("..", "datasets", "DDV_2017_redux.csv")
 ddv_df = pd.read_csv(datapath)
 
+names_dict = dict()
+
+for i in range(57, 225):
+    old_var = "v{}".format(str(i))
+    new_var = "v{}".format(str(i + 8))
+    names_dict[old_var] = new_var
+    
+ddv_df = ddv_df.rename(columns=names_dict)
+
 likert_freq = {1: 'Hver dag', 2: 'Flere gange om ugen', 3: 'En eller to gange om ugen', 4: 'Sjældent', 5: 'Aldrig', 8: 'Ved ikke', 9: 'Uoplyst'}
 freq_qs = ['v216', 'v217', 'v218', 'v219']
 
