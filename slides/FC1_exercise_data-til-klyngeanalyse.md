@@ -28,9 +28,7 @@ Vi har givet jer data, som ikke er helt klar til analyse. Der vil være værdier
 - `ipnr17` indeholder respondentens id-nummer
 - Der er to datasæt:
   - `DDV2017_redux_qs.csv`: Indeholder svar på holdningsspørgsmålene 
+    - Direkte link: https://github.com/CALDISS-AAU/course_ndms-I/raw/master/datasets/DDV2017_redux_qs.csv
   - `DDV2017_redux_bcg.csv`: Indeholder baggrundsvariable for respondenterne
-
-
-
-
+    - Direkte link: https://github.com/CALDISS-AAU/course_ndms-I/raw/master/datasets/DDV2017_redux_bcg.csv
 
