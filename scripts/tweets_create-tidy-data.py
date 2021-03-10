@@ -11,8 +11,8 @@ nlp = stanza.Pipeline('da', processors = 'tokenize, pos, lemma')
 tweetdata_url = "https://raw.githubusercontent.com/CALDISS-AAU/course_ndms-I/master/datasets/poltweets_sample.csv"
 tweets_df = pd.read_csv(tweetdata_url)
 
-def tokenizer_stanza(text):
-    custom_stops = ["@"]
+def tokenizer_stanza(text): # Definerer funktion ud fra koden fra tidligere
+    custom_stops = ["@", "god", "al", "stor", "ny", "tak", "dag"]
     stop_words = list(stopwords.words('danish')) + custom_stops
     pos_tags = ['PROPN', 'ADJ', 'NOUN']
 
@@ -22,7 +22,9 @@ def tokenizer_stanza(text):
 
     for sentence in doc.sentences:
         for word in sentence.words:
-            if (word.pos in pos_tags) and (word.lemma not in stop_words) and not (word.lemma.startswith("@")):
+            if (word.lemma.startswith("@")) or (word.lemma.startswith("#")) or (len(word.lemma) < 3):
+                continue
+            if (word.pos in pos_tags) and (word.lemma not in stop_words):
                 tokens.append(word.lemma)
                 
     return(tokens)
