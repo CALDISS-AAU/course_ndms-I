@@ -2,8 +2,9 @@
 
 
 
-*Sidst opdateret: Februar 2021*
+*Sidst opdateret: September 2021*
 
 
 
 Repo til valgfag "Nyere Digitale Metoder i Samfundsvidenskaben I" (NDMS I)
+
